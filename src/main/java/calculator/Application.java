@@ -1,8 +1,18 @@
 package calculator;
 
+import calculator.controller.Controller;
+import calculator.model.Calculator;
+import calculator.model.SeparatorParser;
+import calculator.view.View;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        Calculator calculator = new Calculator();
+        View view = new View();
+        SeparatorParser separatorParser = new SeparatorParser();
+        Controller controller = new Controller(calculator, view, separatorParser);
+
+        controller.run();
     }
 }
 
